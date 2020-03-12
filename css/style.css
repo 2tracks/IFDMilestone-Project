@@ -135,3 +135,17 @@ a.nav-link:hover{
     background: url('../img/bg-paper.png')center center no-repeat;
     background-size: cover;
 }
+
+.dumbledoresArmy{
+    display: inline!important;
+    
+}
+
+#dumbledorsArmy{
+   
+    
+}
+.Dcharacter{
+    display: inline-block!important;
+    width: 200px;
+}

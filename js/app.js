@@ -6,6 +6,7 @@ const houseInfos = document.getElementById('houseInfos');
 const characterList = document.getElementById('characterList');
 const randomHouse = document.querySelector('#house');
 const Hbg = document.querySelector('.landingPage');
+const dumbledorsArmy = document.querySelector('#dumbledorsArmy');
 
 document.querySelector('#sorting').addEventListener('click', function () {
     console.log("sorting button pressed");
@@ -27,6 +28,7 @@ function sortHat() {
             InfoHouses(dataHouse);
             changeBg(dataHouse);
             houseMates(dataHouse);
+            dumbledorsArmyMember(dataHouse);
         })
 }
 
@@ -102,5 +104,31 @@ function houseMates(dataHouse) {
                 })
                 .join('');
             characterList.innerHTML = (characterValues);
+        });
+}
+
+function dumbledorsArmyMember(dataHouse) {
+    fetch(`${API}characters?${key}`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((characters) => {
+            console.log(characters);
+            let dCharacterValues = characters
+                .map((character) => {
+                    if ((character.house == dataHouse) && (character.dumbledoresArmy == true)) {
+                        return `
+                            <div class = "Dcharacter">
+                                <h2 id='DcharacterName'>${character.name}</h2>
+                                <p>House: ${character.house}</p>
+                            </div>`
+                    }
+                })
+                .join('');
+            dumbledorsArmy.innerHTML = (dCharacterValues);
+            console.log('dumbledores', dCharacterValues);
         });
 }
