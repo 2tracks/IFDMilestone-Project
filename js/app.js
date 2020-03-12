@@ -26,6 +26,7 @@ function sortHat() {
             // invokes the function after the house Value is received
             InfoHouses(dataHouse);
             changeBg(dataHouse);
+            houseMates(dataHouse);
         })
 }
 
@@ -76,4 +77,30 @@ function InfoHouses(dataHouse) {
                 .join('');
                 houseInfos.innerHTML = (houseValues);
         })
+}
+
+// gets the character List from potterapi.com
+function houseMates(dataHouse) {
+    fetch(`${API}characters?${key}`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((characters) => {
+            console.log(characters);
+            let characterValues = characters
+                .map((character) => {
+                    if (character.house == dataHouse) {
+                        return `
+                            <div class = "character flex-fill flex-grow ml-2 mr-2">
+                                <h2 id='characterName'>${character.name}</h2>
+                                <p>House: ${character.house}</p>
+                            </div>`;
+                    }
+                })
+                .join('');
+            characterList.innerHTML = (characterValues);
+        });
 }
