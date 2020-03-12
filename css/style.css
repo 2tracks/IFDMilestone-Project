@@ -62,10 +62,14 @@ a.nav-link:hover{
 }
 
 .houseInfo{
-     color: var(--hogwarts-color);
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: var(--hogwarts-color);
     background-color: rgb(0, 0, 0, .6);
 }
 #house{
+    text-align: center;
     font-family: var(--title-font);
     font-size: 3rem;
 }
@@ -84,23 +88,43 @@ a.nav-link:hover{
 /* the different background banners */
 
 .Ravenclaw {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
     background: url('../img/ravenclaw-logo.png')center center no-repeat;
     background-size: cover;
+    height: 100vh;
+    max-width: 1000px;
 }
 
 .Slytherin {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
     background: url('../img/slytherin-logo.png')center center no-repeat;
     background-size: cover;
+    height: 100vh;
+    max-width: 1000px;
 }
 
 .Gryffindor {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
     background: url('../img/griffendor-logo.png')center center no-repeat;
     background-size: cover;
+    height: 100vh;
+    max-width: 1000px;
 }
 
 .Hufflepuff {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
     background: url('../img/hufflepuff-logo.png')center center no-repeat;
     background-size: cover;
+    height: 100vh;
+    max-width: 1000px;
 
 }
 
