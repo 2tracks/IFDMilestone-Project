@@ -80,3 +80,31 @@ a.nav-link:hover{
     margin: 0;
     font-size: 1.4rem;
 }
+
+/* the different background banners */
+
+.Ravenclaw {
+    background: url('../img/ravenclaw-logo.png')center center no-repeat;
+    background-size: cover;
+}
+
+.Slytherin {
+    background: url('../img/slytherin-logo.png')center center no-repeat;
+    background-size: cover;
+}
+
+.Gryffindor {
+    background: url('../img/griffendor-logo.png')center center no-repeat;
+    background-size: cover;
+}
+
+.Hufflepuff {
+    background: url('../img/hufflepuff-logo.png')center center no-repeat;
+    background-size: cover;
+
+}
+
+.imgPaper {
+    background: url('../img/bg-paper.png')center center no-repeat;
+    background-size: cover;
+}
