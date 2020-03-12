@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Metal+Mania|Stint+Ultra+Condensed&display=swap');
+
+
+:root {
+    --main-font: 'Stint Ultra Condensed', cursive;
+    --script-font: 'Dancing Script', cursive;
+    --title-font: 'Metal Mania', cursive;
+
+    --hogwarts-color: rgb(249, 199, 88, 1);
+
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--main-font);
+    font-size: 1rem;
+}
+
+h1 {
+    font-family: var(--title-font);
+}
