@@ -97,7 +97,6 @@ a.nav-link:hover{
     background: url('../img/ravenclaw-logo.png')center center no-repeat;
     background-size: cover;
     height: 100vh;
-    max-width: 1000px;
 }
 
 .Slytherin {
@@ -107,7 +106,6 @@ a.nav-link:hover{
     background: url('../img/slytherin-logo.png')center center no-repeat;
     background-size: cover;
     height: 100vh;
-    max-width: 1000px;
 }
 
 .Gryffindor {
@@ -117,7 +115,6 @@ a.nav-link:hover{
     background: url('../img/griffendor-logo.png')center center no-repeat;
     background-size: cover;
     height: 100vh;
-    max-width: 1000px;
 }
 
 .Hufflepuff {
@@ -127,8 +124,6 @@ a.nav-link:hover{
     background: url('../img/hufflepuff-logo.png')center center no-repeat;
     background-size: cover;
     height: 100vh;
-    max-width: 1000px;
-
 }
 
 .imgPaper {
@@ -137,7 +132,7 @@ a.nav-link:hover{
 }
 
 .dumbledoresArmy{
-    display: inline!important;
+    
     
 }
 
@@ -147,5 +142,14 @@ a.nav-link:hover{
 }
 .Dcharacter{
     display: inline-block!important;
+    width: 200px;
+}
+
+.deatheaters{
+    display: inline-block!important;
+}
+
+.DECharacter{
+     display: inline-block!important;
     width: 200px;
 }

@@ -7,6 +7,7 @@ const characterList = document.getElementById('characterList');
 const randomHouse = document.querySelector('#house');
 const Hbg = document.querySelector('.landingPage');
 const dumbledorsArmy = document.querySelector('#dumbledorsArmy');
+const deatheaters = document.querySelector('#deatheaters');
 
 document.querySelector('#sorting').addEventListener('click', function () {
     console.log("sorting button pressed");
@@ -29,6 +30,7 @@ function sortHat() {
             changeBg(dataHouse);
             houseMates(dataHouse);
             dumbledorsArmyMember(dataHouse);
+            deatheaterMember(dataHouse);
         })
 }
 
@@ -96,7 +98,7 @@ function houseMates(dataHouse) {
                 .map((character) => {
                     if (character.house == dataHouse) {
                         return `
-                            <div class = "character flex-fill flex-grow ml-2 mr-2">
+                            <div class = "character flex-fill ml-2 mr-2">
                                 <h2 id='characterName'>${character.name}</h2>
                                 <p>House: ${character.house}</p>
                             </div>`;
@@ -130,5 +132,31 @@ function dumbledorsArmyMember(dataHouse) {
                 .join('');
             dumbledorsArmy.innerHTML = (dCharacterValues);
             console.log('dumbledores', dCharacterValues);
+        });
+}
+
+function deatheaterMember(dataHouse) {
+    fetch(`${API}characters?${key}`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((characters) => {
+            console.log(characters);
+            let deathCharacterValues = characters
+                .map((character) => {
+                    if ((character.house == dataHouse) && (character.deathEater == true)) {
+                        return `
+                            <div class = "DECharacter">
+                                <h2 id='DECharacterName'>${character.name}</h2>
+                                <p>House: ${character.house}</p>
+                            </div>`;
+                    }
+                })
+                .join('');
+            deatheaters.innerHTML = (deathCharacterValues);
+            console.log('deatheaters', deathCharacterValues);
         });
 }
