@@ -15,6 +15,7 @@
 }
 html,
 body {
+    position: relative;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,6 +30,10 @@ h1 {
     font-family: var(--title-font);
 }
 
+.navbar{
+     position: sticky;
+}
+
 .navbar-brand {
     font-family: var(--title-font);
     font-size: 3rem;
@@ -41,16 +46,19 @@ a.nav-link{
     padding-left: 1rem!important;
 }
 a.nav-link:hover{
-    background-color: #25292d;
+   color: rgb(241, 172, 23);
 }
+.bg-dark {
+    background-color: #252526!important;
+}
+
 
 .landingPage{
     position: relative;
     margin: 0 auto;
     padding: 0;
-    background: url('../img/hogwarts-logo5.jpg')center center no-repeat;
+    background: url('../img/hogwarts-logo5.png')center center no-repeat;
     background-size: cover;
-    background-color: #252526!important;
     height: 100vh;  
 }
 

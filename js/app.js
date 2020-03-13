@@ -160,3 +160,27 @@ function deatheaterMember(dataHouse) {
             console.log('deatheaters', deathCharacterValues);
         });
 }
+
+// parts of this code are from Stackoverflow
+
+let selectSpell = $('#spells');
+
+selectSpell.empty();
+
+selectSpell.append('<option selected="true" disabled>Select spell</option>');
+selectSpell.prop('selectedIndex', 0);
+
+// populate the select menu with a list of spells
+
+jQuery.getJSON(`${API}spells?${key}`, function (data) {
+    console.log(data);
+    $.each(data, function (key, entry) {
+        selectSpell.append($('<option></option>').attr('value', entry.spell).text(entry.spell));
+    })
+
+});
+
+function getSelectValue() {
+    let selectValue = document.getElementById('spells').value;
+    console.log(selectValue);
+}
