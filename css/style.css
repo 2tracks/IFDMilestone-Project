@@ -174,3 +174,8 @@ a.nav-link:hover{
     display: inline-block!important;
     width: 200px;
 }
+
+.spells{
+    color: var(--hogwarts-color);
+    background-color: grey;
+}

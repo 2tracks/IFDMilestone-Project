@@ -8,6 +8,11 @@ const randomHouse = document.querySelector('#house');
 const Hbg = document.querySelector('.landingPage');
 const dumbledorsArmy = document.querySelector('#dumbledorsArmy');
 const deatheaters = document.querySelector('#deatheaters');
+const selectSpell = document.querySelector('#spells');
+let spellT = document.getElementById("spellT");
+const aSpell = document.getElementById('aSpell');
+
+//let selectValue = document.getElementById('spells').value;
 
 document.querySelector('#sorting').addEventListener('click', function () {
     console.log("sorting button pressed");
@@ -161,9 +166,75 @@ function deatheaterMember(dataHouse) {
         });
 }
 
+//---------------------------------------------------------------------------------------------------------------
+
+
+
+function hpSpells() {
+    fetch(`${API}spells?${key}`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((spells) => {
+            console.log(spells);
+            let spellValues = spells
+                .map((spell) => {
+                    return `    
+                                <option id='spellName' value='${spell.spell}'>${spell.spell}</option>
+                            `
+                })
+                .join('');
+            selectSpell.innerHTML = (spellValues);
+            console.log('spells', spellValues);
+        });
+}
+hpSpells();
+
+
+
+selectSpell.addEventListener('change', (getSelectedValue) =>{
+    let selectValue = document.getElementById('spells').value;
+    console.log(selectValue);
+    spellT.textContent=(selectValue);
+    spellType(selectValue);
+})
+
+
+function spellType(selectValue) {
+    fetch(`${API}spells?${key}`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((spells) => {
+             let TEValue = spells
+                    .map((spell)=> {
+                        if(selectValue == spell.spell){
+                            return `
+                                    <div class = 'col'>Spell name: ${spell.spell}</div>
+                                    <div class = 'col'>Type: ${spell.type}</div>
+                                    <div class = 'col'>Effect: ${spell.effect}</div>
+                            `
+                        }
+                    })
+                    .join('');
+
+            aSpell.innerHTML = (TEValue);
+            console.log(TEValue);
+        
+        });
+}
+
+
+
 // parts of this code are from Stackoverflow
 
-let selectSpell = $('#spells');
+/*let selectSpell = $('#spells');
 
 selectSpell.empty();
 
@@ -178,9 +249,5 @@ jQuery.getJSON(`${API}spells?${key}`, function (data) {
         selectSpell.append($('<option></option>').attr('value', entry.spell).text(entry.spell));
     })
 
-});
+});*/
 
-function getSelectValue() {
-    let selectValue = document.getElementById('spells').value;
-    console.log(selectValue);
-}
