@@ -30,8 +30,8 @@ h1 {
     font-family: var(--title-font);
 }
 
-.navbar{
-     position: sticky;
+.navbar-nav{
+     margin-left: 8rem;
 }
 
 .navbar-brand {
@@ -223,5 +223,22 @@ select#spells > option{
 #aSpell{
     font-size: 1.5rem;
     padding: 1rem;
+}
+
+#footer {
+  position: relative;
+  padding: 1rem;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;  
+  color: var(--hogwarts-color);          
+}
+.footer-text{
+    margin-bottom: 1rem;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--hogwarts-color);
 }
 
