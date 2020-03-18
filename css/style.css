@@ -177,5 +177,35 @@ a.nav-link:hover{
 
 .spells{
     color: var(--hogwarts-color);
-    background-color: grey;
+    background-color: #1c1c1d;
 }
+
+select#spells{
+    font-size: 1.3rem;
+    margin-left: 2rem;
+    color: var(--hogwarts-color);
+    background-color: black;
+}
+select#spells:hover{
+    border-color: green;
+}
+
+select#spells::-ms-expand{
+    display: none;
+}
+
+select#spells:focus{
+    color: var(--hogwarts-color)!important;
+    background-color: #252526;
+    outline-color: green;
+}
+
+select#spells > option{
+   color: var(--hogwarts-color);
+}
+
+#aSpell{
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
