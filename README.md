@@ -27,16 +27,18 @@ I designed my Mockup Idea in Balsamiq.
 - Your housemates will be collected from the API.
 - Member of Dumbledors Army
 - Deatheater
-- You can select a spell und it get all the iformation from the API.
+- You can select a spell and it'll get the type and effect iformation from the API.
 
 
 ## Technologies used
 - HTML, CSS, Javascript, Bootstrap, 
-- The API's are https://www.potterapi.com/ and https://hp-api.herokuapp.com/
+- The API I use is https://www.potterapi.com/
 
 ## Testing
 
-- I tested my Javascript on https://jshint.com/ and sorted out the warnings.
+- I tested the Javascript code on https://jshint.com/ and sorted out the warnings.
+Additionally I checked my functions manually with console.log() to see if there is a mistake or if I get the right solution.
+
 - I tested the HTML on https://validator.w3.org/
 - I tested the CSS on https://jigsaw.w3.org/css-validator/
 
@@ -47,18 +49,18 @@ I designed my Mockup Idea in Balsamiq.
 ## Deployment
 
 I developed the site on Gidpot and pushed my code in different commits to Github.
+The see the website I use Github pages https://2tracks.github.io/IFDMilestone-Project/
 
 ## Credits
 
-- The API's are https://www.potterapi.com/ and https://hp-api.herokuapp.com/
+- The API is https://www.potterapi.com/ 
 
 ### Content
 
-> potterapi.com
-
+> https://www.potterapi.com/ 
 
 ### Media
-The images are from https://www.pngguru.com/free-transparent-background-png-clipart-vprfy
+The images are from https://www.pngguru.com
 they are under a MIT licens and free to use.
 
 ### Acknowledgement

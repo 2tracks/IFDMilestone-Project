@@ -2,7 +2,6 @@
 
 const key = 'key=$2a$10$9fftCXDrCb6LJ27jrH38EubyvIEFVfxRlezzYggIBpwJvj2ATZh9K';
 const API = 'https://www.potterapi.com/v1/';
-const hpAPI = 'https://hp-api.herokuapp.com/api/';
 
 const houseInfos = document.getElementById('houseInfos');
 const characterList = document.getElementById('characterList');

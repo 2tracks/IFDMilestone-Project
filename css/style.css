@@ -9,14 +9,8 @@
     --hogwarts-color: rgb(249, 199, 88, 1);
 
 }
-.container-fluid{
-    max-width: 1200px;
-    background-color: #252526!important;
-    border: 1px solid #000;
-}
 html,
-body {
-    position: relative;
+body { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -26,6 +20,10 @@ body {
     font-family: var(--main-font);
     font-size: 1rem;
     background-color: #252526;
+}
+.container-fluid{
+    max-width: 1200px;
+    background-color: #252526!important;
 }
 
 h1 {
@@ -38,7 +36,7 @@ h1 {
 
 .navbar-brand {
     font-family: var(--title-font);
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--hogwarts-color) !important;
     padding-left: 1rem;
 }
@@ -51,7 +49,6 @@ a.nav-link:hover{
    color: rgb(241, 172, 23);
 }
 .bg-dark {
-    /*background-color: #252526!important;*/
     background-color: transparent!important;
 }
 
@@ -82,8 +79,8 @@ a.nav-link:hover{
 .info-text{
     position: relative;
     float: right;
-    top: 5rem;
-    right: 5rem;
+    top: 2rem;
+    right: 3rem;
     padding: 1rem;
     padding-bottom: 1.5rem;
     font-family: var(--script-font);
@@ -161,6 +158,8 @@ a.nav-link:hover{
 .imgPaper {
     background: url('../img/bg-paper.png')center center no-repeat;
     background-size: cover;
+    margin: 0;
+    padding: 0;
 }
 
 .houseMates{
@@ -228,9 +227,8 @@ select#spells > option{
 
 #aSpell{
     font-size: 1.5rem;
-    padding: 1rem;
 }
-#sp>h1{
+#sp > h1{
     color: green;
 }
 
@@ -240,19 +238,21 @@ select#spells > option{
 }
 
 #footer {
+  font-size: 0.8rem;
   position: relative;
   padding: 1rem;
   bottom: 0;
-  width: 100%;
-  height: 2.5rem;  
+  width: 100%;  
   color: grey;          
-}
-.footer-text{
-    margin-bottom: 1rem;
 }
 
 footer a{
     text-decoration: none;
     color: inherit;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color: var(--hogwarts-color);
 }
 
