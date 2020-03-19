@@ -12,7 +12,7 @@ const selectSpell = document.querySelector('#spells');
 let spellT = document.getElementById("spellT");
 const aSpell = document.getElementById('aSpell');
 
-//let selectValue = document.getElementById('spells').value;
+//-----gets a random house -----------------------------------------------------------------------------------------
 
 document.querySelector('#sorting').addEventListener('click', function () {
     console.log("sorting button pressed");
@@ -39,7 +39,7 @@ function sortHat() {
         })
 }
 
-// Changes the background depending on the house
+//-------- Changes the background depending on the house-------------------------------------------------------------
 
 function changeBg(dataHouse) {
     var classList = Hbg.classList;
@@ -62,7 +62,8 @@ function changeBg(dataHouse) {
     }
 }
 
-// gets house Infos
+//----- gets the infos of the selected house------------------------------------------------------------------------------
+
 function InfoHouses(dataHouse) {
     fetch(`${API}houses?${key}`)
         .then((response) => {
@@ -88,7 +89,8 @@ function InfoHouses(dataHouse) {
         })
 }
 
-// gets the character List from potterapi.com
+//----- gets the character List from potterapi.com-------------------------------------------------------------
+
 function houseMates(dataHouse) {
     fetch(`${API}characters?${key}`)
         .then((response) => {
@@ -113,6 +115,8 @@ function houseMates(dataHouse) {
             characterList.innerHTML = (characterValues);
         });
 }
+
+//-------Shows how many Member of Dumbledors Army are in the selected house -----------------------------------------------
 
 function dumbledorsArmyMember(dataHouse) {
     fetch(`${API}characters?${key}`)
@@ -140,6 +144,8 @@ function dumbledorsArmyMember(dataHouse) {
         });
 }
 
+//-------Shows how many deatheaters are in the selected house -----------------------------------------------
+
 function deatheaterMember(dataHouse) {
     fetch(`${API}characters?${key}`)
         .then((response) => {
@@ -166,8 +172,7 @@ function deatheaterMember(dataHouse) {
         });
 }
 
-//---------------------------------------------------------------------------------------------------------------
-
+//-------------Spell section---------------------------------------------------------------------------
 
 
 function hpSpells() {
@@ -193,15 +198,16 @@ function hpSpells() {
 }
 hpSpells();
 
-
+//-------EventListener for the select menu -------------------------------------------------------------
 
 selectSpell.addEventListener('change', (getSelectedValue) =>{
     let selectValue = document.getElementById('spells').value;
     console.log(selectValue);
-    spellT.textContent=(selectValue);
+    //spellT.textContent=(selectValue);
     spellType(selectValue);
 })
 
+//-------Shows the type and effect of the selected spell -----------------------------------------------
 
 function spellType(selectValue) {
     fetch(`${API}spells?${key}`)
@@ -229,25 +235,4 @@ function spellType(selectValue) {
         
         });
 }
-
-
-
-// parts of this code are from Stackoverflow
-
-/*let selectSpell = $('#spells');
-
-selectSpell.empty();
-
-selectSpell.append('<option selected="true" disabled>Select spell</option>');
-selectSpell.prop('selectedIndex', 0);
-
-// populate the select menu with a list of spells
-
-jQuery.getJSON(`${API}spells?${key}`, function (data) {
-    console.log(data);
-    $.each(data, function (key, entry) {
-        selectSpell.append($('<option></option>').attr('value', entry.spell).text(entry.spell));
-    })
-
-});*/
 
