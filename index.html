@@ -13,7 +13,7 @@
 
     <div class="container-fluid p-0">
      <header>
-        <nav id='navbar-scroll' class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Harry Potter</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
 
     <section id='landingP' class="landingPage">
         <div class="info-text">Click on the 'Hat' to get sorted into your house!</div>
-        <img id='sorting' src="img/sortingHatR.png" alt="sorting hat">
+        <img id='sorting' src="img/sortingHatRC.png" alt="sorting hat">
         <div class="houseInfo">
             <div id="house"></div>
             <div id="houseInfos"></div>
@@ -58,6 +58,7 @@
 
     <section id='dumbleArmy' class="dumbledoresArmy">
         <h1 class='text-center'>Members of Dumbledores Army</h1>
+        <p class='no-dumMember text-center'></p>
         <div id='dumbledorsArmy'></div>
     </section>
 
@@ -72,10 +73,7 @@
         <div class='spells1 row'>
             <select name="select-spell col-12" id="spells"></select>  
         </div>  
-        <div id='aSpell' class="row">      
-            <div id ='spellT' class = 'col'></div>
-            <div id='aSpell' class="col"></div>
-        </div>
+        <div id='aSpell' class="row"></div>
        
     </section>
 
@@ -83,7 +81,7 @@
         <footer id='footer'>
         <div class="row footer-text">
             <p class="copyright col">© Gabriela Di Salvatore-Bosshard 2020</p>
-            <a href="https://www.jkrowling.com/" class='HPWebS col'>Official Harry Potter Website</a>
+            <a href="https://www.jkrowling.com/" target='_blank' class='HPWebS col'>Official Harry Potter Website</a>
         </div>
         </footer>
     
@@ -99,8 +97,5 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <script src="js/app.js"></script>
-    <script>
-        $('body').scrollspy({ target: '#navbar-scroll' })
-    </script>
 </body>
 </html>

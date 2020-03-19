@@ -36,9 +36,9 @@ I designed my Mockup Idea in Balsamiq.
 
 ## Testing
 
-I tested my Javascript on https://jshint.com/ and sorted out the warnings.
-I tested the HTML on https://validator.w3.org/
-I tested the CSS on https://jigsaw.w3.org/css-validator/
+- I tested my Javascript on https://jshint.com/ and sorted out the warnings.
+- I tested the HTML on https://validator.w3.org/
+- I tested the CSS on https://jigsaw.w3.org/css-validator/
 
 
 ### Jasmine testing

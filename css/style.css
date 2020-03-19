@@ -173,7 +173,10 @@ a.nav-link:hover{
     padding: 1rem 0 2rem 0; 
 }
 
-#dumbledorsArmy{}
+.no-dumMember{
+    font-size: 1.2rem;
+    color: grey;
+}
 
 .Dcharacter{
     padding: 0 1rem;

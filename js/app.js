@@ -1,3 +1,5 @@
+/*jshint esversion:6 */
+
 const key = 'key=$2a$10$9fftCXDrCb6LJ27jrH38EubyvIEFVfxRlezzYggIBpwJvj2ATZh9K';
 const API = 'https://www.potterapi.com/v1/';
 const hpAPI = 'https://hp-api.herokuapp.com/api/';
@@ -7,9 +9,9 @@ const characterList = document.getElementById('characterList');
 const randomHouse = document.querySelector('#house');
 const Hbg = document.querySelector('.landingPage');
 const dumbledorsArmy = document.querySelector('#dumbledorsArmy');
+const NodumMember = document.querySelector('.no-dumMember');
 const deatheaters = document.querySelector('#deatheaters');
 const selectSpell = document.querySelector('#spells');
-let spellT = document.getElementById("spellT");
 const aSpell = document.getElementById('aSpell');
 
 //-----gets a random house -----------------------------------------------------------------------------------------
@@ -17,7 +19,7 @@ const aSpell = document.getElementById('aSpell');
 document.querySelector('#sorting').addEventListener('click', function () {
     console.log("sorting button pressed");
     sortHat();
-})
+});
 
 function sortHat() {
     fetch(`${API}sortingHat`)
@@ -36,7 +38,7 @@ function sortHat() {
             houseMates(dataHouse);
             dumbledorsArmyMember(dataHouse);
             deatheaterMember(dataHouse);
-        })
+        });
 }
 
 //-------- Changes the background depending on the house-------------------------------------------------------------
@@ -81,12 +83,12 @@ function InfoHouses(dataHouse) {
                 <div class='houseInfoItem text-center'>Head of House: ${house.headOfHouse}</div>
                 <div class='houseInfoItem text-center'>Mascot: ${house.mascot}</div>
                 <div class='houseInfoItem text-center'>House Ghost: ${house.houseGhost}</div>
-                <div class='houseInfoItem text-center'>Founder: ${house.founder}</div>`
+                <div class='houseInfoItem text-center'>Founder: ${house.founder}</div>`;
                     }
                 })
                 .join('');
                 houseInfos.innerHTML = (houseValues);
-        })
+        });
 }
 
 //----- gets the character List from potterapi.com-------------------------------------------------------------
@@ -135,7 +137,10 @@ function dumbledorsArmyMember(dataHouse) {
                             <div class = "Dcharacter">
                                 <h2 id='DcharacterName'>${character.name}</h2>
                                 <p>House: ${character.house}</p>
-                            </div>`
+                            </div>`;
+                    } else if((character.house == dataHouse) && (character.dumbledoresArmy == false)){
+                        
+                        NodumMember.innerHTML=("There is no member of Dumbledors Army in this house");
                     }
                 })
                 .join('');
@@ -189,7 +194,7 @@ function hpSpells() {
                 .map((spell) => {
                     return `    
                                 <option id='spellName' value='${spell.spell}'>${spell.spell}</option>
-                            `
+                            `;
                 })
                 .join('');
             selectSpell.innerHTML = (spellValues);
@@ -203,9 +208,8 @@ hpSpells();
 selectSpell.addEventListener('change', (getSelectedValue) =>{
     let selectValue = document.getElementById('spells').value;
     console.log(selectValue);
-    //spellT.textContent=(selectValue);
     spellType(selectValue);
-})
+});
 
 //-------Shows the type and effect of the selected spell -----------------------------------------------
 
@@ -225,7 +229,7 @@ function spellType(selectValue) {
                                     <div class = 'col'>Spell name: ${spell.spell}</div>
                                     <div class = 'col'>Type: ${spell.type}</div>
                                     <div class = 'col'>Effect: ${spell.effect}</div>
-                            `
+                            `;
                         }
                     })
                     .join('');
