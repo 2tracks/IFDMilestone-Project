@@ -3,6 +3,7 @@
 const key = 'key=$2a$10$9fftCXDrCb6LJ27jrH38EubyvIEFVfxRlezzYggIBpwJvj2ATZh9K';
 const API = 'https://www.potterapi.com/v1/';
 
+const sorting = document.querySelector('#sorting');
 const houseInfos = document.getElementById('houseInfos');
 const characterList = document.getElementById('characterList');
 const randomHouse = document.querySelector('#house');
@@ -15,7 +16,7 @@ const aSpell = document.getElementById('aSpell');
 
 //-----gets a random house -----------------------------------------------------------------------------------------
 
-document.querySelector('#sorting').addEventListener('click', function () {
+sorting.addEventListener('click', function () {
     console.log("sorting button pressed");
     sortHat();
 });
@@ -137,9 +138,6 @@ function dumbledorsArmyMember(dataHouse) {
                                 <h2 id='DcharacterName'>${character.name}</h2>
                                 <p>House: ${character.house}</p>
                             </div>`;
-                    } else if((character.house == dataHouse) && (character.dumbledoresArmy == false)){
-                        
-                        NodumMember.innerHTML=("There is no member of Dumbledors Army in this house");
                     }
                 })
                 .join('');
@@ -176,7 +174,7 @@ function deatheaterMember(dataHouse) {
         });
 }
 
-//-------------Spell section---------------------------------------------------------------------------
+//-------------Spell section---------------------------------------------------------------------------//
 
 
 function hpSpells() {
@@ -202,15 +200,15 @@ function hpSpells() {
 }
 hpSpells();
 
-//-------EventListener for the select menu -------------------------------------------------------------
+//-------EventListener for the select menu -------------------------------------------------------------//
 
-selectSpell.addEventListener('change', (getSelectedValue) =>{
+selectSpell.addEventListener('change', () =>{
     let selectValue = document.getElementById('spells').value;
     console.log(selectValue);
     spellType(selectValue);
 });
 
-//-------Shows the type and effect of the selected spell -----------------------------------------------
+//-------Shows the type and effect of the selected spell -----------------------------------------------//
 
 function spellType(selectValue) {
     fetch(`${API}spells?${key}`)
