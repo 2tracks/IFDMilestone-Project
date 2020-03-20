@@ -7,7 +7,7 @@ describe('.sortHat', function(){
     });
 
    it('fetches from the potterapi.com', function(){
-        expect(window.fetch).toHaveBeenCalledWidth('potterapi.com');
+        expect(window.fetch).toHaveBeenCalledWith('https://www.potterapi.com/v1/sortingHat');
    });
 });
     
