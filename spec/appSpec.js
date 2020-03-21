@@ -2,8 +2,8 @@
 
 describe('.sortHat', function(){
     beforeEach(function(){
-        spyOn(window,'fetch');
-    
+        spyOn(window,'fetch').and.callThrough;
+        sortHat();
     });
 
    it('fetches from the potterapi.com', function(){
