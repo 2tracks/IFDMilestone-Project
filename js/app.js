@@ -14,7 +14,7 @@ const deatheaters = document.querySelector('#deatheaters');
 const selectSpell = document.querySelector('#spells');
 const aSpell = document.getElementById('aSpell');
 
-//-----gets a random house -----------------------------------------------------------------------------------------
+//-----gets a random house -----------------------------------------------------------------------------------------//
 
 sorting.addEventListener('click', function () {
     console.log("sorting button pressed");
@@ -32,7 +32,7 @@ function sortHat() {
         .then((dataHouse) => {
             console.log(dataHouse);
             randomHouse.textContent = (dataHouse);
-            // invokes the function after the house Value is received
+            // invokes the function after the house Value is received //
             InfoHouses(dataHouse);
             changeBg(dataHouse);
             houseMates(dataHouse);
@@ -41,7 +41,7 @@ function sortHat() {
         });
 }
 
-//-------- Changes the background depending on the house-------------------------------------------------------------
+//-------- Changes the background depending on the house-------------------------------------------------------------//
 
 function changeBg(dataHouse) {
     var classList = Hbg.classList;
@@ -51,20 +51,16 @@ function changeBg(dataHouse) {
 
     if (dataHouse == 'Hufflepuff') {
         Hbg.classList.add('Hufflepuff');
-        Hbg.classList.item(0).remove;
     } else if (dataHouse == 'Gryffindor') {
         Hbg.classList.add('Gryffindor');
-        Hbg.classList.item(0).remove;
     } else if (dataHouse == 'Slytherin') {
         Hbg.classList.add('Slytherin');
-        Hbg.classList.item(0).remove;
     } else if (dataHouse == 'Ravenclaw') {
         Hbg.classList.add('Ravenclaw');
-        Hbg.classList.item(0).remove;
     }
 }
 
-//----- gets the infos of the selected house------------------------------------------------------------------------------
+//----- gets the infos of the selected house------------------------------------------------------------------------------//
 
 function InfoHouses(dataHouse) {
     fetch(`${API}houses?${key}`)
@@ -91,7 +87,7 @@ function InfoHouses(dataHouse) {
         });
 }
 
-//----- gets the character List from potterapi.com-------------------------------------------------------------
+//----- gets the character List from potterapi.com-------------------------------------------------------------//
 
 function houseMates(dataHouse) {
     fetch(`${API}characters?${key}`)
@@ -118,7 +114,7 @@ function houseMates(dataHouse) {
         });
 }
 
-//-------Shows how many Member of Dumbledors Army are in the selected house -----------------------------------------------
+//-------Shows how many Member of Dumbledors Army are in the selected house -----------------------------------------------//
 
 function dumbledorsArmyMember(dataHouse) {
     fetch(`${API}characters?${key}`)
@@ -146,7 +142,7 @@ function dumbledorsArmyMember(dataHouse) {
         });
 }
 
-//-------Shows how many deatheaters are in the selected house -----------------------------------------------
+//-------Shows how many deatheaters are in the selected house -----------------------------------------------//
 
 function deatheaterMember(dataHouse) {
     fetch(`${API}characters?${key}`)
