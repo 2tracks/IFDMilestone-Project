@@ -14,6 +14,7 @@ const deatheaters = document.querySelector('#deatheaters');
 const selectSpell = document.querySelector('#spells');
 const aSpell = document.getElementById('aSpell');
 
+
 //-----gets a random house -----------------------------------------------------------------------------------------//
 
 sorting.addEventListener('click', function () {
@@ -110,7 +111,8 @@ function houseMates(dataHouse) {
                     }
                 })
                 .join('');
-            characterList.innerHTML = (characterValues);
+                console.log(characterValues);
+                characterList.innerHTML = (characterValues);
         });
 }
 
