@@ -31,9 +31,6 @@ h1 {
     font-family: var(--title-font);
 }
 
-.navbar-nav{
-     margin-left: 8rem;
-}
 
 .navbar-brand {
     font-family: var(--title-font);
@@ -66,6 +63,9 @@ a.nav-link:hover{
 .landingPage img{
      max-width: 1000px;
 }
+.landingPage img:hover{
+     max-width: 1000px;
+}
 
 #sorting{
     position: absolute;
@@ -77,6 +77,7 @@ a.nav-link:hover{
     padding: 0;
     cursor: pointer;
 }
+
 .info-text{
     position: relative;
     float: right;
@@ -257,3 +258,8 @@ footer a:hover{
     color: var(--hogwarts-color);
 }
 
+@media only screen and (min-width: 992px){
+    .navbar-nav{
+      margin-left: 8rem;
+    }
+}
